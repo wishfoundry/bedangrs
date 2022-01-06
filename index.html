@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" id="so_fonts-css" href="https://fonts.googleapis.com/css2?family=Barlow%3Awght%40600&amp;display=swap"
+        type="text/css" media="all">
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.3/particles.min.js"></script>
+
+    <style>
+        @font-face {
+            font-family: "Bolt";
+            src: url("fonts/Bolt Regular.eot");
+            src: local("Bolt-Regular"),
+                local(Bolt Regular),
+                url("fonts/Bolt Regular.eot?#iefix") format("embedded-opentype"),
+                url("fonts/Bolt Regular.woff2") format("woff2"),
+                url("fonts/Bolt Regular.woff") format("woff"),
+                url("fonts/Bolt Regular.ttf") format("truetype"),
+                url("fonts/Bolt Regular.otf") format("opentype"),
+                url("fonts/Bolt Regular.svg#Bolt Regular") format("svg");
+            font-weight: 400;
+            font-style: normal;
+            font-stretch: normal;
+            unicode-range: U+0020-007D;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+
+        html,
+        body,
+        div,
+        p,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            font-family: "Bolt", sans-serif;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 1.65;
+            color: #1C1E30;
+            letter-spacing: -0.4px;
+        }
+
+        body {
+            height: 100vh;
+            width: 100vw;
+            display: fixed;
+
+
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('background.jpg');
+            background-size: cover;
+            background-position: center;
+            filter: sepia(0.1);
+        }
+
+        #main-logo {
+            height: 60px;
+            width: 60px;
+            background: url('alert.svg');
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: absolute;
+            left: calc(50% - 30px);
+            top: 35px;
+
+        }
+
+        h1 {
+            font-size: 85px;
+            line-height: 1;
+            letter-spacing: -5.5px;
+            font-family: "Bolt", sans-serif;
+            color: #fff;
+        }
+
+        #hero {
+            color: #fff;
+            position: fixed;
+            top: 350px;
+            display: block;
+            text-align: center;
+            font-weight: 400;
+            width: 100%;
+        }
+
+        #hero h1 {
+            margin: 0;
+            padding-bottom: 20px;
+            color: #fff;
+        }
+
+        #hero h5 {
+            color: #fff;
+            font-size: 18px;
+            line-height: 1.65;
+            letter-spacing: -0.4px;
+            padding-bottom: 25px;
+        }
+
+        .hero-button {
+            margin: 0;
+            border: 0;
+            font-size: 14px;
+            line-height: 1;
+            padding: 20px 35px 20px 35px;
+            font-family: "Barlow", sans-serif;
+            font-size: 17px;
+            line-height: 1;
+            -webkit-transition: all 0.3s ease-out;
+            -o-transition: all 0.3s ease-out;
+            transition: all 0.3s ease-out;
+            padding: 23px 49px 23px 49px;
+            text-transform: uppercase;
+            position: relative;
+            display: inline-block;
+            color: #fff;
+            font-weight: 600;
+            letter-spacing: 1.7px;
+            cursor: pointer;
+        }
+
+        .hero-button span {
+            -webkit-transition: all 0.3s ease;
+            -o-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+            position: absolute;
+            width: auto;
+            height: auto;
+            background-color: #fff;
+        }
+
+
+
+        .hero-button span:nth-child(1) {
+            width: 2px;
+            left: 0;
+            top: 0;
+            bottom: 0;
+        }
+
+        .hero-button span:nth-child(2) {
+            height: 2px;
+            left: 0;
+            top: 0;
+            right: 30%;
+        }
+
+        .hero-button span:nth-child(3) {
+            height: 2px;
+            right: 0;
+            top: 0;
+            left: 80%;
+        }
+
+        .hero-button span:nth-child(4) {
+            width: 2px;
+            right: 0;
+            top: 0;
+            bottom: 0;
+        }
+
+        .hero-button span:nth-child(5) {
+            height: 2px;
+            right: 0;
+            bottom: 0;
+            left: 30%;
+        }
+
+        .hero-button span:nth-child(6) {
+            height: 2px;
+            left: 0;
+            bottom: 0;
+            right: 80%;
+        }
+
+
+
+        .hero-button:hover {
+            background-color: #fff;
+            color: #1C1E30;
+        }
+
+        .hero-button:hover span:nth-child(2) {
+            right: 0%;
+        }
+
+        .hero-button:hover span:nth-child(3) {
+            left: 100%;
+        }
+
+        .hero-button:hover span:nth-child(5) {
+            left: 0%;
+        }
+
+        .hero-button:hover span:nth-child(6) {
+            right: 100%;
+        }
+
+
+        a:hover,
+        a:active,
+        a:link {
+            text-decoration: none;
+        }
+
+        .a-link {
+            -webkit-transition: all 0.3s ease-out;
+            -o-transition: all 0.3s ease-out;
+            transition: all 0.3s ease-out;
+            font-family: "Barlow", sans-serif;
+            font-size: 13px;
+            line-height: 1;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: #1C1E30;
+            display: inline-block;
+            font-weight: 600;
+            position: relative;
+            opacity: 1;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .a-link::after {
+            -webkit-transition: all 0.3s ease-out;
+            -o-transition: all 0.3s ease-out;
+            transition: all 0.3s ease-out;
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            opacity: 0.4;
+            background-color: #fff;
+            left: 0;
+            bottom: -4px;
+            content: "";
+        }
+
+        .a-link:hover {
+            opacity: 0.6;
+        }
+
+        .a-link:hover::after {
+            left: auto;
+            right: 0;
+            width: 0;
+        }
+
+        .nav-menu {
+            position: absolute;
+            top: 50px;
+            left: 20px;
+            color: #fff;
+        }
+
+
+        #particles {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+    </style>
+</head>
+
+<body id="body">
+
+    <canvas id="particles" ></canvas>
+
+    <div id="main-logo"></div>
+
+    <div class="nav-menu"><a class="a-link">Contact</a></div>
+
+    <div id="hero">
+
+        <h1><span>Be</span> <span>Dangerous</span></h1>
+        <h5>Be Informed. Be Humble, Be Bold </h5>
+
+        <a class="hero-button" href="#">
+            Begin
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </a>
+    </div>
+</body>
+
+<script>
+    !function () {
+        Particles.init({
+            selector: '#particles',
+            color: '#ffffff'
+        });
+    }();
+</script>
+
+</html>
