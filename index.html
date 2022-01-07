@@ -430,7 +430,7 @@
 
 <body id="body">
 
-    <canvas id="particles" ></canvas>
+    <canvas id="particles"></canvas>
 
     <div id="main-logo"></div>
 
@@ -461,28 +461,28 @@
             <a class="contact-close">X</a>
 
 
-            <form action="https://mailthis.to/bngreer@gmail.com" method="POST" class="form">
+            <form action="https://script.google.com/macros/s/AKfycbygtuQKEpa0v_xtMXm5a8U181bad1Pfm-XTAjcia1KlChSRbmItvw1R1WvhtOCTSaZSNg/exec" method="POST" class="form" encType="multipart/form-data">
                 <h4>Let's Chat</h4>
                 <input type="hidden" name="_subject" value="Message from BeDangerous website">
 
                 <div class="form-control">
-                <span>
-                <input type="text" name="name" placeholder="Your Name">
-                </span>
+                    <span>
+                        <input type="text" name="name" placeholder="Your Name">
+                    </span>
                 </div>
 
                 <div class="form-control">
-                <span>
-                <input type="email" name="_replyto" placeholder="Your Email">
-                </span>
+                    <span>
+                        <input type="email" name="_replyto" placeholder="Your Email">
+                    </span>
                 </div>
 
                 <div class="form-control">
-                        <span>
-                        <textarea  name="message" placeholder="How can we help?"></textarea>
-                        </span>
-                        </div>
-                
+                    <span>
+                        <textarea name="message" placeholder="How can we help?"></textarea>
+                    </span>
+                </div>
+
                 <p><input type="submit" value="Send Message"></p>
             </form>
         </div>
@@ -501,17 +501,17 @@
             return document.querySelector('#contact-form');
         }
 
-        document.querySelector('.nav-menu .a-link').addEventListener('click', function(e) {
+        document.querySelector('.nav-menu .a-link').addEventListener('click', function (e) {
             contactForm().classList.add('active');
         })
 
-        document.querySelector('.hero-button').addEventListener('click', function(e) {
+        document.querySelector('.hero-button').addEventListener('click', function (e) {
             e.preventDefault();
             e.stopPropagation();
             contactForm().classList.add('active');
         })
 
-        document.querySelector('.contact-close').addEventListener('click', function(e) {
+        document.querySelector('.contact-close').addEventListener('click', function (e) {
             contactForm().classList.remove('active');
         })
     }();
