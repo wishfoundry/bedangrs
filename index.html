@@ -92,6 +92,15 @@
             color: #fff;
         }
 
+        h4 {
+            font-size: 34px;
+            line-height: 1.1;
+            letter-spacing: 1px;
+            font-family: "Bolt", sans-serif;
+            font-weight: 400;
+            color: #1C1E30;
+        }
+
         #hero {
             color: #fff;
             position: fixed;
@@ -281,6 +290,141 @@
             right: 0;
             bottom: 0;
         }
+
+
+
+        #contact-form {}
+
+        #contact-form .overlay {
+            -webkit-transition: all 0.5s ease-out;
+            -o-transition: all 0.5s ease-out;
+            transition: all 0.5s ease-out;
+            position: fixed;
+            width: auto;
+            height: auto;
+            bottom: 0;
+            left: -10%;
+            right: 110%;
+            top: 0;
+            background-color: rgba(0, 0, 0, 0.6);
+            z-index: 101;
+        }
+        #contact-form.active .overlay {
+            left: 0;
+            right: 0;
+        }
+
+        .form-container {
+            -webkit-transition: all 1s ease-out;
+            -o-transition: all 1s ease-out;
+            transition: all 1s ease-out;
+            background-color: #fff;
+            z-index: 102;
+            position: fixed;
+            left: -130%;
+            max-width: 100vw;
+            bottom: 0;
+            top: 0;
+            width: 70%;
+        }
+        .active .form-container {
+            left: 0;
+        }
+
+        .form-container .contact-close {
+            position: absolute;
+            top: 50px;
+            right: 50px;
+            color: #868383;
+        }
+
+        .form-container .form {
+            padding-top: 90px;
+            padding-left: 80px;
+            padding-right: 60px;
+            padding-bottom: 50px;
+            overflow: auto;
+            box-sizing: border-box;
+            max-height: 100vh;
+        
+        }
+
+        .form-container input {
+            font-size: 14px;
+            line-height: 1.2;
+            -webkit-transition: all 0.3s ease;
+            -o-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+            font-family: "Barlow", sans-serif;
+            font-weight: 600;
+            border-right-width: 0;
+            border-top-width: 0;
+            border-left-width: 0;
+            border-bottom: 2px solid #000;
+            padding: 12px 0;
+            letter-spacing: 1px;
+            outline: none;
+            color: #000;
+            resize: none;
+            width: 100%;
+        }
+
+        .form-container textarea {
+            font-size: 16px;
+            line-height: 1.2;
+            -webkit-transition: all 0.3s ease;
+            -o-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+            font-family: "Barlow", sans-serif;
+            font-weight: 600;
+            border-right-width: 0;
+            border-top-width: 0;
+            border-left-width: 0;
+            border-bottom: 2px solid #000;
+            padding: 12px 0;
+            letter-spacing: 1px;
+            outline: none;
+            color: #000;
+            resize: none;
+            width: 100%;
+        }
+
+        html body .form-container input[type=submit] {
+            text-transform: uppercase;
+            letter-spacing: 1.3px;
+            font-size: 14px;
+            line-height: 1.2;
+            background-color: #000;
+            color: #fff;
+            -webkit-transition: all 0.3s ease;
+            -o-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+            font-size: 16px;
+            line-height: 1.2;
+            font-family: "Barlow", sans-serif;
+            font-weight: 600;
+            color: #0A0A0A;
+            background-color: #fff;
+            opacity: 1;
+            padding: 18px 40px 19px 40px;
+            box-sizing: border-box;
+            text-align: center;
+            border-width: 0;
+            cursor: pointer;
+            outline: none;
+            max-width: 200px;
+            background-color: #000;
+    color: #fff;
+        }
+
+        html body .form-container input[type=submit]:hover {
+            opacity: 0.6;
+        }
+
+        .form-control {
+            width: 100%;
+            padding-bottom: 25px;
+        }
     </style>
 </head>
 
@@ -294,7 +438,7 @@
 
     <div id="hero">
 
-        <h1><span>Be</span> <span>Dangerous</span></h1>
+        <h1><span style="color: #f4e6ab;">Be</span><span>Dangerous</span></h1>
         <h5>Be Informed. Be Humble, Be Bold </h5>
 
         <a class="hero-button" href="#">
@@ -307,6 +451,42 @@
             <span></span>
         </a>
     </div>
+
+
+
+    <div id="contact-form" class="">
+        <div class="overlay"></div>
+
+        <div class="form-container">
+            <a class="contact-close">X</a>
+
+
+            <form action="https://mailthis.to/bngreer@gmail.com" method="POST" class="form">
+                <h4>Let's Chat</h4>
+                <input type="hidden" name="_subject" value="Message from BeDangerous website">
+
+                <div class="form-control">
+                <span>
+                <input type="text" name="name" placeholder="Your Name">
+                </span>
+                </div>
+
+                <div class="form-control">
+                <span>
+                <input type="email" name="_replyto" placeholder="Your Email">
+                </span>
+                </div>
+
+                <div class="form-control">
+                        <span>
+                        <textarea  name="message" placeholder="How can we help?"></textarea>
+                        </span>
+                        </div>
+                
+                <p><input type="submit" value="Send Message"></p>
+            </form>
+        </div>
+    </div>
 </body>
 
 <script>
@@ -315,6 +495,25 @@
             selector: '#particles',
             color: '#ffffff'
         });
+
+
+        function contactForm() {
+            return document.querySelector('#contact-form');
+        }
+
+        document.querySelector('.nav-menu .a-link').addEventListener('click', function(e) {
+            contactForm().classList.add('active');
+        })
+
+        document.querySelector('.hero-button').addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            contactForm().classList.add('active');
+        })
+
+        document.querySelector('.contact-close').addEventListener('click', function(e) {
+            contactForm().classList.remove('active');
+        })
     }();
 </script>
 
